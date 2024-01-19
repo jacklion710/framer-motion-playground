@@ -1,14 +1,15 @@
-# Email List Management with SendGrid
+# Framer Motion Playground
 
 ## Project Overview
 
-This project demonstrates the integration of SendGrid's API for managing email marketing contacts. It focuses on adding and removing contacts from an audience list, showcasing how to leverage SendGrid for email marketing purposes effectively.
+This project is a collection of reusable animations for web design, showcasing the power and flexibility of Framer Motion, a popular animation library for React. It focuses on creating engaging user interfaces with smooth animations and transitions.
 
 ### Key Features
 
-- **Intercept Observer**: Trigger events when the user scrolls an element into view.
-- **Framer Motion**: Animations for applying interesting movement to vector graphics and creative transitions for introducing elements.
-- **Chakra UI**: Node package that facillitates front end design with ease.
+- **Framer Motion**: Demonstrates a variety of animations and transitions, offering a playground to experiment with Framer Motion properties.
+- **Interactivity**: Interactive elements that respond to user actions like hover, click, drag, etc.
+- **Chakra UI**: Utilizes Chakra UI for a clean, modern, and responsive design.
+- **Responsive Design**: Ensures that animations are fluid and consistent across different screen sizes.
 
 ## Getting Started
 
@@ -17,8 +18,6 @@ These instructions will help you set up a copy of the project on your local mach
 ### Prerequisites
 
 - Node.js
-- Firebase account
-- SendGrid account
 
 ### Installation
 
@@ -27,24 +26,26 @@ These instructions will help you set up a copy of the project on your local mach
    ```bash
    git clone https://github.com/jacklion710/framer-motion-playground.git
    cd framer-motion-playground
+   npm install
+   npm run dev
    ```
 
-2. **Set Environment Variable**
-Create a .env file in the root directory and add your Firebase and SendGrid API keys:
+2. **Install Dependencies**
+Run the following command to install the necessary dependencies:
 
     ```bash
-    NEXT_PUBLIC_API_KEY=your_firebase_api_key
-    NEXT_PUBLIC_AUTH_DOMAIN=your_firebase_auth_domain
-    NEXT_PUBLIC_PROJECT_ID=your_firebase_project_id
-    NEXT_PUBLIC_STORAGE_BUCKET=your_firebase_storage_bucket
-    NEXT_PUBLIC_MESSAGING_SENDER_ID=your_firebase_sender_id
-    NEXT_PUBLIC_APP_ID=your_firebase_app_id
-    NEXT_PUBLIC_MEASUREMENT_ID=your_firebase_measurement_id
-    SENDGRID_API_KEY=your_sendgrid_api_key
+    npm install
+    ```
+3. **Run the Development Server**
+Start the development server with:
+
+    ```bash
+    npm run dev
     ```
 
 ### Built With
 React - A JavaScript library for building user interfaces
-Firebase - Backend-as-a-Service for web and mobile apps
-SendGrid - Cloud-based email service that assists businesses with email delivery
-Chakra UI - A simple, modular, and accessible component library
+Framer Motion -  powerful animation library for React
+Chakra UI - A simple, modular, and accessible component library that gives you the building blocks you need to build your React applications.
+
+Feel free to contribute to this project by submitting pull requests or opening issues for any bugs or enhancements.
