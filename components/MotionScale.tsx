@@ -6,6 +6,7 @@ interface IScaleMotionComponentProps {
   duration: number;
   delay: number;
   easing: string;
+  trigger: boolean;
   [prop: string]: any; // for additional props
 }
 
@@ -14,6 +15,7 @@ const ScaleMotion: React.FC<IScaleMotionComponentProps> = ({
   duration,
   delay,
   easing,
+  trigger,
   ...props
 }) => {
 
@@ -25,7 +27,7 @@ const ScaleMotion: React.FC<IScaleMotionComponentProps> = ({
 
   const motionProps = {
     initial: "initial",
-    animate: "animate",
+    animate: trigger ? "visible" : "hidden",
     exit: "exit",
     variants: scaleVariants,
     transition: {

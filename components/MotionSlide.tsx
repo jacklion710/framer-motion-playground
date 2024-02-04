@@ -6,6 +6,7 @@ interface ISlideMotionComponentProps {
   duration: number;
   delay: number;
   easing: string;
+  trigger: boolean;
   [prop: string]: any; // for additional props
 }
 
@@ -14,6 +15,7 @@ const SlideMotion: React.FC<ISlideMotionComponentProps> = ({
   duration,
   delay,
   easing,
+  trigger,
   ...props
 }) => {
 
@@ -25,7 +27,7 @@ const SlideMotion: React.FC<ISlideMotionComponentProps> = ({
 
   const motionProps = {
     initial: "initial",
-    animate: "animate",
+    animate: trigger ? "visible" : "hidden",
     exit: "exit",
     variants: slideVariants,
     transition: {

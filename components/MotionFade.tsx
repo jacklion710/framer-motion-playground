@@ -4,8 +4,9 @@ import { chakra, ChakraProvider } from '@chakra-ui/react';
 interface IFadeMotionComponentProps {
   children: React.ReactNode;
   duration: number;
-  delay: number;
+  delay?: number;
   easing: string;
+  trigger: boolean;
   [prop: string]: any; // for additional props
 }
 
@@ -14,6 +15,7 @@ const FadeMotion: React.FC<IFadeMotionComponentProps> = ({
   duration,
   delay,
   easing,
+  trigger,
   ...props
 }) => {
 
@@ -25,7 +27,7 @@ const FadeMotion: React.FC<IFadeMotionComponentProps> = ({
 
   const motionProps = {
     initial: "initial",
-    animate: "animate",
+    animate: trigger ? "visible" : "hidden",
     exit: "exit",
     variants: fadeVariants,
     transition: {

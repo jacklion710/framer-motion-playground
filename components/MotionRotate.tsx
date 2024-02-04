@@ -10,8 +10,9 @@ interface IMotionComponentProps {
   children: React.ReactNode;
   animationType: AnimationType;
   duration: number;
-  delay: number;
+  delay?: number;
   easing: string;
+  trigger: boolean;
   [prop: string]: any; // for additional props
 }
 
@@ -21,6 +22,7 @@ const Motion: React.FC<IMotionComponentProps> = ({
     duration,
     delay,
     easing,
+    trigger,
     ...props
   }) => {
 
@@ -49,7 +51,7 @@ const Motion: React.FC<IMotionComponentProps> = ({
 
   const motionProps = {
     initial: "initial",
-    animate: "animate",
+    animate: trigger ? "visible" : "hidden",
     exit: "exit",
     variants: motionVariants[animationType],
     transition: {

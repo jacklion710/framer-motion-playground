@@ -1,39 +1,56 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import MotionFade from '../components/MotionSlide';
 import MotionRotate from '../components/MotionSlide';
 import MotionScale from '../components/MotionSlide';
 import MotionSlide from '../components/MotionSlide';
 import { 
-  Box, 
+  Center,
+  VStack, 
   Button,
-  ChakraProvider
+  ChakraProvider,
+  Image
 } from '@chakra-ui/react';
 
 export default function Home() {
+  const [animateFade, setAnimateFade] = useState(false);
+  const [animateRotate, setAnimateRotate] = useState(false);
+  const [animateSlide, setAnimateSlide] = useState(false);
+  const [animateScale, setAnimateScale] = useState(false);
+
   return (
     <ChakraProvider>
+      <VStack spacing={8} align="stretch">
 
-      <MotionFade animationType="fade" duration={1} easing="easeOut">
-        <Box p={5} shadow="md" borderWidth="1px">
-          <p>Content inside a box</p>
-        </Box>
-      </MotionFade>
+        <Center>
+          <MotionFade duration={1} easing="easeOut" trigger={animateFade}>
+            <Image src="/next.svg" alt="Next.js logo" boxSize="25%" />
+          </MotionFade>
+          <Button colorScheme="blue" onClick={() => setAnimateFade(!animateFade)}>Trigger Fade</Button>
+        </Center>
 
-      <MotionRotate animationType="slide" duration={0.5} easing="easeIn">
-        <Button colorScheme="blue">Click Me</Button>
-      </MotionRotate>
-      
-      <MotionSlide animationType="fade" duration={1} easing="easeOut">
-        <Box p={5} shadow="md" borderWidth="1px">
-          <p>Content inside a box</p>
-        </Box>
-      </MotionSlide>
+        <Center>
+          <MotionRotate in={animateRotate} duration={0.5} trigger={animateRotate} easing="easeIn">
+            <Image src="/vercel.svg" alt="Vercel logo" boxSize="25%" />
+          </MotionRotate>
+          <Button colorScheme="blue" onClick={() => setAnimateRotate(!animateRotate)}>Trigger Rotate</Button>
+        </Center>
+        
+        <Center>
+          <MotionSlide in={animateSlide} duration={1} trigger={animateSlide}  easing="easeOut">
+            <Image src="/next.svg" alt="Next.js logo" boxSize="25%" />
+          </MotionSlide>
+          <Button colorScheme="blue" onClick={() => setAnimateSlide(!animateSlide)}>Trigger Slide</Button>
+        </Center>
 
-      <MotionScale animationType="slide" duration={0.5} easing="easeIn">
-        <Button colorScheme="blue">Click Me</Button>
-      </MotionScale>
+        <Center>
+          <MotionScale in={animateScale} duration={0.5} trigger={animateScale} easing="easeIn">
+            <Image src="/vercel.svg" alt="Vercel logo" boxSize="25%" />
+          </MotionScale>
+          <Button colorScheme="blue" onClick={() => setAnimateScale(!animateScale)}>Trigger Scale</Button>
+        </Center>
 
+      </VStack>
     </ChakraProvider>
   );
 }
