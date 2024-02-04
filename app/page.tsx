@@ -20,34 +20,42 @@ export default function Home() {
 
   return (
     <ChakraProvider>
-      <VStack spacing={8} align="stretch">
+      <VStack spacing={20} align="stretch" mt={20}>
 
         <Center>
-          <MotionFade duration={1} easing="easeOut" trigger={animateFade}>
-            <Image src="/next.svg" alt="Next.js logo" boxSize="25%" />
-          </MotionFade>
-          <Button colorScheme="blue" onClick={() => setAnimateFade(!animateFade)}>Trigger Fade</Button>
+          <VStack spacing={10}>
+            <MotionFade duration={1} easing="easeOut" trigger={animateFade}>
+              <Image src="/next.svg" alt="Next.js logo" boxSize="100%" />
+            </MotionFade>
+            <Button colorScheme="blue" onClick={() => setAnimateFade(!animateFade)}>Trigger Fade</Button>
+          </VStack>
         </Center>
 
         <Center>
-          <MotionRotate in={animateRotate} duration={0.5} trigger={animateRotate} easing="easeIn">
-            <Image src="/vercel.svg" alt="Vercel logo" boxSize="25%" />
-          </MotionRotate>
-          <Button colorScheme="blue" onClick={() => setAnimateRotate(!animateRotate)}>Trigger Rotate</Button>
+          <VStack spacing={10}>
+            <MotionRotate in={animateRotate} duration={0.5} trigger={animateRotate} easing="easeIn">
+              <Image src="/vercel.svg" alt="Vercel logo" boxSize="100%" />
+            </MotionRotate>
+            <Button colorScheme="blue" onClick={() => setAnimateRotate(!animateRotate)}>Trigger Rotate</Button>
+          </VStack>
         </Center>
         
         <Center>
-          <MotionSlide in={animateSlide} duration={1} trigger={animateSlide}  easing="easeOut">
-            <Image src="/next.svg" alt="Next.js logo" boxSize="25%" />
-          </MotionSlide>
-          <Button colorScheme="blue" onClick={() => setAnimateSlide(!animateSlide)}>Trigger Slide</Button>
+          <VStack spacing={10}>
+            <MotionSlide in={animateSlide} duration={1} trigger={animateSlide} easing="easeOut">
+              <Image src="/next.svg" alt="Next.js logo" boxSize="100%" />
+            </MotionSlide>
+            <Button colorScheme="blue" onClick={() => setAnimateSlide(!animateSlide)}>Trigger Slide</Button>
+          </VStack>
         </Center>
 
         <Center>
-          <MotionScale in={animateScale} duration={0.5} trigger={animateScale} easing="easeIn">
-            <Image src="/vercel.svg" alt="Vercel logo" boxSize="25%" />
-          </MotionScale>
-          <Button colorScheme="blue" onClick={() => setAnimateScale(!animateScale)}>Trigger Scale</Button>
+          <VStack spacing={10}>
+            <MotionScale in={animateScale} duration={0.5} trigger={animateScale} easing="easeIn">
+              <Image src="/vercel.svg" alt="Vercel logo" boxSize="100%" />
+            </MotionScale>
+            <Button colorScheme="blue" onClick={() => setAnimateScale(!animateScale)}>Trigger Scale</Button>
+          </VStack>
         </Center>
 
       </VStack>
