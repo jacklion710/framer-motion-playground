@@ -27,7 +27,7 @@ const FadeMotion: React.FC<IFadeMotionComponentProps> = ({
 
   const motionProps = {
     initial: "initial",
-    animate: trigger ? "visible" : "hidden",
+    animate: trigger ? "animate" : "initial", 
     exit: "exit",
     variants: fadeVariants,
     transition: {

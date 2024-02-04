@@ -26,34 +26,17 @@ const Motion: React.FC<IMotionComponentProps> = ({
     ...props
   }) => {
 
-  const motionVariants: { [key in AnimationType]: any } = {
-    fade: {
-      initial: { opacity: 0 },
-      animate: { opacity: 1 },
-      exit: { opacity: 0 }
-    },
-    slide: {
-      initial: { x: '-100vw' },
-      animate: { x: 0 },
-      exit: { x: '100vw' }
-    },
-    scale: {
-      initial: { scale: 0 },
-      animate: { scale: 1 },
-      exit: { scale: 0 }
-    },
-    rotate: {
-      initial: { rotate: 0 },
-      animate: { rotate: 360 },
-      exit: { rotate: 0 }
-    },
+  const rotateVariants = {
+    initial: { rotate: 0 },
+    animate: { rotate: 360 },
+    exit: { rotate: 0 }
   };
 
   const motionProps = {
     initial: "initial",
-    animate: trigger ? "visible" : "hidden",
+    animate: trigger ? "animate" : "initial",
     exit: "exit",
-    variants: motionVariants[animationType],
+    variants: rotateVariants,
     transition: {
       duration,
       delay,

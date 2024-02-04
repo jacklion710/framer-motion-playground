@@ -27,7 +27,7 @@ const ScaleMotion: React.FC<IScaleMotionComponentProps> = ({
 
   const motionProps = {
     initial: "initial",
-    animate: trigger ? "visible" : "hidden",
+    animate: trigger ? "animate" : "initial",
     exit: "exit",
     variants: scaleVariants,
     transition: {

@@ -27,7 +27,7 @@ const SlideMotion: React.FC<ISlideMotionComponentProps> = ({
 
   const motionProps = {
     initial: "initial",
-    animate: trigger ? "visible" : "hidden",
+    animate: trigger ? "animate" : "initial",
     exit: "exit",
     variants: slideVariants,
     transition: {
