@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
-import { chakra } from '@chakra-ui/react';
+import { 
+  chakra, 
+  ChakraProvider 
+} from '@chakra-ui/react';
 
 type AnimationType = 'fade' | 'slide' | 'scale' | 'rotate';
 
@@ -12,7 +15,7 @@ interface IMotionComponentProps {
   [prop: string]: any; // for additional props
 }
 
-const MotionComponent: React.FC<IMotionComponentProps> = ({
+const Motion: React.FC<IMotionComponentProps> = ({
     children,
     animationType,
     duration,
@@ -41,7 +44,7 @@ const MotionComponent: React.FC<IMotionComponentProps> = ({
     ...props
   };
 
-  return <motion.div {...motionProps}>{children}</motion.div>;
+  return <ChakraProvider><motion.div {...motionProps}>{children}</motion.div></ChakraProvider>;
 };
 
-export default chakra(MotionComponent);
+export default chakra(Motion);
