@@ -3,26 +3,34 @@ import { chakra, ChakraProvider } from '@chakra-ui/react';
 
 interface IScaleMotionComponentProps {
   children: React.ReactNode;
-  duration: number;
-  delay: number;
+  duration: number; // Duration in milliseconds
+  delay?: number; // Delay in milliseconds, optional
   easing: string;
   trigger: boolean;
-  [prop: string]: any; // for additional props
+  initialScaleX: number; // Initial scale for X axis
+  initialScaleY: number; // Initial scale for Y axis
+  finalScaleX: number;   // Final scale for X axis
+  finalScaleY: number;   // Final scale for Y axis
+  [prop: string]: any;   // for additional props
 }
 
 const MotionScale: React.FC<IScaleMotionComponentProps> = ({
   children,
   duration,
-  delay,
+  delay = 0,
   easing,
   trigger,
+  initialScaleX,
+  initialScaleY,
+  finalScaleX,
+  finalScaleY,
   ...props
 }) => {
 
   const scaleVariants = {
-    initial: { scale: 0 },
-    animate: { scale: 1 },
-    exit: { scale: 0 }
+    initial: { scaleX: initialScaleX, scaleY: initialScaleY },
+    animate: { scaleX: finalScaleX, scaleY: finalScaleY },
+    exit: { scaleX: initialScaleX, scaleY: initialScaleY }
   };
 
   const motionProps = {
@@ -31,8 +39,8 @@ const MotionScale: React.FC<IScaleMotionComponentProps> = ({
     exit: "exit",
     variants: scaleVariants,
     transition: {
-      duration,
-      delay,
+      duration: duration / 1000, // Convert ms from seconds for Framer Motion
+      delay: delay / 1000,       // Convert ms from seconds for Framer Motion
       ease: easing,
     },
     ...props
