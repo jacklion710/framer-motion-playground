@@ -17,14 +17,20 @@ export default function Home() {
   const [animateRotate, setAnimateRotate] = useState(false);
   const [animateSlide, setAnimateSlide] = useState(false);
   const [animateScale, setAnimateScale] = useState(false);
-
+  
   return (
     <ChakraProvider>
       <VStack spacing={20} align="stretch" mt={20}>
 
         <Center>
           <VStack spacing={10}>
-            <MotionFade duration={1} easing="easeOut" trigger={animateFade}>
+            <MotionFade 
+              duration={2000} // 2 second
+              easing="easeOut" 
+              trigger={animateFade}
+              initialOpacity={0}
+              finalOpacity={.5}
+            >
               <Image src="/next.svg" alt="Next.js logo" boxSize="100%" />
             </MotionFade>
             <Button colorScheme="blue" onClick={() => setAnimateFade(!animateFade)}>Trigger Fade</Button>
@@ -33,7 +39,13 @@ export default function Home() {
 
         <Center>
           <VStack spacing={10}>
-            <MotionRotate in={animateRotate} duration={0.5} trigger={animateRotate} easing="easeIn">
+            <MotionRotate 
+              duration={1000} // 1 second
+              trigger={animateRotate} 
+              easing="anticipate"
+              initialTurns={180}
+              finalTurns={720} // One full rotation
+            >
               <Image src="/vercel.svg" alt="Vercel logo" boxSize="100%" />
             </MotionRotate>
             <Button colorScheme="blue" onClick={() => setAnimateRotate(!animateRotate)}>Trigger Rotate</Button>
@@ -42,7 +54,15 @@ export default function Home() {
         
         <Center>
           <VStack spacing={10}>
-            <MotionSlide in={animateSlide} duration={1} trigger={animateSlide} easing="easeOut">
+            <MotionSlide 
+              duration={500} // 0.5 seconds
+              trigger={animateSlide} 
+              easing="circleOut"
+              horizontalSlideInitial={'-100vw'}
+              horizontalSlideFinal={0}
+              verticalSlideInitial={'-100vh'}
+              verticalSlideFinal={0}
+            >
               <Image src="/next.svg" alt="Next.js logo" boxSize="100%" />
             </MotionSlide>
             <Button colorScheme="blue" onClick={() => setAnimateSlide(!animateSlide)}>Trigger Slide</Button>
@@ -53,9 +73,8 @@ export default function Home() {
           <VStack spacing={10}>
             <MotionScale 
               duration={500} // 500 milliseconds
-              delay={0}
-              easing="easeIn"
               trigger={animateScale}
+              easing="easeIn"
               initialScaleX={0.5}
               initialScaleY={0.5}
               finalScaleX={1}
