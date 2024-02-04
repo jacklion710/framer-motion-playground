@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from 'react';
-import MotionFade from '../components/MotionSlide';
-import MotionRotate from '../components/MotionSlide';
-import MotionScale from '../components/MotionSlide';
+import MotionFade from '../components/MotionFade';
+import MotionRotate from '../components/MotionRotate';
+import MotionScale from '../components/MotionScale';
 import MotionSlide from '../components/MotionSlide';
 import { 
   Center,
