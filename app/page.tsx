@@ -51,7 +51,16 @@ export default function Home() {
 
         <Center>
           <VStack spacing={10}>
-            <MotionScale in={animateScale} duration={0.5} trigger={animateScale} easing="easeIn">
+            <MotionScale 
+              duration={500} // 500 milliseconds
+              delay={0}
+              easing="easeIn"
+              trigger={animateScale}
+              initialScaleX={0.5}
+              initialScaleY={0.5}
+              finalScaleX={1}
+              finalScaleY={1}
+            >
               <Image src="/vercel.svg" alt="Vercel logo" boxSize="100%" />
             </MotionScale>
             <Button colorScheme="blue" onClick={() => setAnimateScale(!animateScale)}>Trigger Scale</Button>
