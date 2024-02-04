@@ -10,7 +10,7 @@ interface IScaleMotionComponentProps {
   [prop: string]: any; // for additional props
 }
 
-const ScaleMotion: React.FC<IScaleMotionComponentProps> = ({
+const MotionScale: React.FC<IScaleMotionComponentProps> = ({
   children,
   duration,
   delay,
@@ -47,4 +47,4 @@ const ScaleMotion: React.FC<IScaleMotionComponentProps> = ({
   );
 };
 
-export default chakra(ScaleMotion);
+export default chakra(MotionScale);

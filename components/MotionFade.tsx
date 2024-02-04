@@ -10,7 +10,7 @@ interface IFadeMotionComponentProps {
   [prop: string]: any; // for additional props
 }
 
-const FadeMotion: React.FC<IFadeMotionComponentProps> = ({
+const MotionFade: React.FC<IFadeMotionComponentProps> = ({
   children,
   duration,
   delay,
@@ -47,4 +47,4 @@ const FadeMotion: React.FC<IFadeMotionComponentProps> = ({
   );
 };
 
-export default chakra(FadeMotion);
+export default chakra(MotionFade);

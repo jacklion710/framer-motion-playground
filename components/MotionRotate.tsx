@@ -16,7 +16,7 @@ interface IMotionComponentProps {
   [prop: string]: any; // for additional props
 }
 
-const Motion: React.FC<IMotionComponentProps> = ({
+const MotionRotate: React.FC<IMotionComponentProps> = ({
     children,
     animationType,
     duration,
@@ -52,4 +52,4 @@ const Motion: React.FC<IMotionComponentProps> = ({
           </ChakraProvider>;
 };
 
-export default chakra(Motion);
+export default chakra(MotionRotate);

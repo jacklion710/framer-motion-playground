@@ -10,7 +10,7 @@ interface ISlideMotionComponentProps {
   [prop: string]: any; // for additional props
 }
 
-const SlideMotion: React.FC<ISlideMotionComponentProps> = ({
+const MotionSlide: React.FC<ISlideMotionComponentProps> = ({
   children,
   duration,
   delay,
@@ -47,4 +47,4 @@ const SlideMotion: React.FC<ISlideMotionComponentProps> = ({
   );
 };
 
-export default chakra(SlideMotion);
+export default chakra(MotionSlide);
