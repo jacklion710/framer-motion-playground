@@ -9,7 +9,9 @@ import {
   VStack, 
   Button,
   ChakraProvider,
-  Image
+  Image,
+  Box,
+  Link
 } from '@chakra-ui/react';
 
 export default function Home() {
@@ -20,6 +22,11 @@ export default function Home() {
   
   return (
     <ChakraProvider>
+      <Box position="relative" top={5} left={4}>
+        <Link href="/AnimMenu">
+          <Button colorScheme="blue">Animations Menu</Button>
+        </Link>
+      </Box>
       <VStack spacing={20} align="stretch" mt={20}>
 
         <Center>
