@@ -25,10 +25,26 @@ const Motion: React.FC<IMotionComponentProps> = ({
   }) => {
 
   const motionVariants: { [key in AnimationType]: any } = {
-    fade: { /* ... */ },
-    slide: { /* ... */ },
-    scale: { /* ... */ },
-    rotate: { /* ... */ },
+    fade: {
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+      exit: { opacity: 0 }
+    },
+    slide: {
+      initial: { x: '-100vw' },
+      animate: { x: 0 },
+      exit: { x: '100vw' }
+    },
+    scale: {
+      initial: { scale: 0 },
+      animate: { scale: 1 },
+      exit: { scale: 0 }
+    },
+    rotate: {
+      initial: { rotate: 0 },
+      animate: { rotate: 360 },
+      exit: { rotate: 0 }
+    },
   };
 
   const motionProps = {
@@ -44,7 +60,11 @@ const Motion: React.FC<IMotionComponentProps> = ({
     ...props
   };
 
-  return <ChakraProvider><motion.div {...motionProps}>{children}</motion.div></ChakraProvider>;
+  return  <ChakraProvider>
+            <motion.div {...motionProps}>
+              {children}
+            </motion.div>
+          </ChakraProvider>;
 };
 
 export default chakra(Motion);
