@@ -17,8 +17,8 @@ import {
  * Flip direction options:
  * - "horizontal" :: The component will flip horizontally (around the Y-axis).
  * - "vertical" :: The component will flip vertically (around the X-axis).
- * 
- * For more easing options and details, refer to Framer Motion's documentation.
+ * - "diagonalLeft" :: The component will flip diagonally left (around a combination of X and Y axes).
+ * - "diagonalRight" :: The component will flip diagonally right (around a combination of X and Y axes).
  */
 interface IMotionFlipProps {
   children: React.ReactNode;
@@ -26,7 +26,8 @@ interface IMotionFlipProps {
   delay?: number;
   easing: string;
   trigger: boolean;
-  flipDirection: 'horizontal' | 'vertical';
+  flipDirection: 'horizontal' | 'vertical' | 'diagonalLeft' | 'diagonalRight';
+  [prop: string]: any;
 }
 
 const MotionFlip: React.FC<IMotionFlipProps> = ({
@@ -36,11 +37,17 @@ const MotionFlip: React.FC<IMotionFlipProps> = ({
   easing,
   trigger,
   flipDirection,
+  ...props
 }) => {
 
   const flipVariants = {
     initial: { rotateY: 0, rotateX: 0 },
-    animate: flipDirection === 'horizontal' ? { rotateY: 180 } : { rotateX: 180 },
+    animate: {
+      ...(flipDirection === 'horizontal' && { rotateY: 180 }),
+      ...(flipDirection === 'vertical' && { rotateX: 180 }),
+      ...(flipDirection === 'diagonalLeft' && { rotateY: 180, rotateX: 180 }),
+      ...(flipDirection === 'diagonalRight' && { rotateY: -180, rotateX: 180 }),
+    },
   };
 
   const motionProps = {
@@ -52,7 +59,8 @@ const MotionFlip: React.FC<IMotionFlipProps> = ({
       delay: delay / 1000,
       ease: easing,
     },
-    style: { transformStyle: 'preserve-3d' as const }, // Updated line
+    style: { transformStyle: 'preserve-3d' as const }, 
+    ...props
   };
 
   return (
