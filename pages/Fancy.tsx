@@ -5,6 +5,7 @@ import MotionFlip from '../components/fancy/MotionFlip';
 import MotionSpiralIn from '../components/fancy/MotionSpiralIn';
 import MotionFloatingBubble from '../components/fancy/MotionFloatingBubble';
 import MotionRippleWave from '../components/fancy/MotionRippleWave';
+import MotionDisplace from '../components/fancy/MotionDisplace';
 import { 
     VStack, 
     ChakraProvider, 
@@ -20,7 +21,8 @@ const Fancy = () => {
     const [zoomFadeTrigger, setZoomFadeTrigger] = useState(false);
     const [floatingBubbleTrigger, setFloatingBubbleTrigger] = useState(false);
     const [rippleWaveTrigger, setRippleWaveTrigger] = useState(false);
-    
+    const [displaceTrigger, setDisplaceTrigger] = useState(false);
+
     return (
       <ChakraProvider>
         <Box position="relative" top={5} left={4}>
@@ -93,6 +95,22 @@ const Fancy = () => {
                     </MotionRippleWave>
                     <Button colorScheme="blue" onClick={() => setRippleWaveTrigger(!rippleWaveTrigger)}>
                     Trigger Ripple Wave
+                    </Button>
+                </VStack>
+            </Center>
+
+            <Center>
+                <VStack spacing={10}>
+                    <MotionDisplace
+                        duration={1000}
+                        easing="easeInOut"
+                        trigger={displaceTrigger}
+                        intensity={90}
+                    >
+                        <Image src="/next.svg" alt="Next.js logo" boxSize="150px" />
+                    </MotionDisplace>
+                    <Button colorScheme="blue" onClick={() => setDisplaceTrigger(!displaceTrigger)}>
+                        Trigger Displace
                     </Button>
                 </VStack>
             </Center>
