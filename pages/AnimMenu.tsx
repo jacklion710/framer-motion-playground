@@ -5,6 +5,7 @@ const AnimMenu = () => {
   return (
     <ChakraProvider>
       <VStack spacing={4} align="center" justify="center" height="100vh">
+        <Link href="/" passHref><Button colorScheme="blue">Standard</Button></Link>
         <Link href="/Encapsulated" passHref><Button colorScheme="blue">Encapsulated</Button></Link>
         <Link href="/Fancy" passHref><Button colorScheme="blue">Fancy</Button></Link>
         <Link href="/Glitch" passHref><Button colorScheme="blue">Glitch</Button></Link>
