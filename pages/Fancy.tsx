@@ -4,6 +4,7 @@ import React, {
 import MotionFlip from '../components/fancy/MotionFlip';
 import MotionSpiralIn from '../components/fancy/MotionSpiralIn';
 import MotionFloatingBubble from '../components/fancy/MotionFloatingBubble';
+import MotionRippleWave from '../components/fancy/MotionRippleWave';
 import { 
     VStack, 
     ChakraProvider, 
@@ -18,6 +19,7 @@ const Fancy = () => {
     const [flipTrigger, setFlipTrigger] = useState(false);
     const [zoomFadeTrigger, setZoomFadeTrigger] = useState(false);
     const [floatingBubbleTrigger, setFloatingBubbleTrigger] = useState(false);
+    const [rippleWaveTrigger, setRippleWaveTrigger] = useState(false);
     
     return (
       <ChakraProvider>
@@ -69,7 +71,7 @@ const Fancy = () => {
                         duration={1000}
                         easing="easeInOut"
                         trigger={floatingBubbleTrigger}
-                        flipDirection="diagonalLeft"
+                        floatDistance={100}
                     >
                         <Image src="/next.svg" alt="Next.js logo" boxSize="150px" />
                     </MotionFloatingBubble>
@@ -81,19 +83,16 @@ const Fancy = () => {
 
             <Center>
                 <VStack spacing={10}>
-                    <MotionSpiralIn 
-                        duration={500} 
-                        easing="easeInOut"
-                        trigger={zoomFadeTrigger}
-                        initialScale={0.5} // Initial scale
-                        finalScale={1} // Final scale
-                        initialOpacity={0} // Initial opacity
-                        finalOpacity={1} // Final opacity
+                    <MotionRippleWave 
+                    duration={500}
+                    easing="easeInOut"
+                    trigger={rippleWaveTrigger}
+                    amplitude={.5}
                     >
                     <Image src="/vercel.svg" alt="Next.js logo" boxSize="150px" />
-                    </MotionSpiralIn>
-                    <Button colorScheme="blue" onClick={() => setZoomFadeTrigger(!zoomFadeTrigger)}>
-                    Trigger Spiral In
+                    </MotionRippleWave>
+                    <Button colorScheme="blue" onClick={() => setRippleWaveTrigger(!rippleWaveTrigger)}>
+                    Trigger Ripple Wave
                     </Button>
                 </VStack>
             </Center>
