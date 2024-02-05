@@ -8,9 +8,7 @@ const AnimMenu = () => {
         <Link href="/" passHref><Button colorScheme="blue">Standard</Button></Link>
         <Link href="/Encapsulated" passHref><Button colorScheme="blue">Encapsulated</Button></Link>
         <Link href="/Fancy" passHref><Button colorScheme="blue">Fancy</Button></Link>
-        <Link href="/Glitch" passHref><Button colorScheme="blue">Glitch</Button></Link>
         <Link href="/Idle" passHref><Button colorScheme="blue">Idle</Button></Link>
-        <Link href="/Hover" passHref><Button colorScheme="blue">Hover</Button></Link>
       </VStack>
     </ChakraProvider>
   );
