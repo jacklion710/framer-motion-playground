@@ -2,6 +2,7 @@ import React, {
     useState 
 } from 'react';
 import MotionFlip from '../components/fancy/MotionFlip';
+import MotionSpiralIn from '../components/fancy/MotionSpiralIn';
 import { 
     VStack, 
     ChakraProvider, 
@@ -14,7 +15,8 @@ import {
 
 const Fancy = () => {
     const [flipTrigger, setFlipTrigger] = useState(false);
-  
+    const [zoomFadeTrigger, setZoomFadeTrigger] = useState(false);
+    
     return (
       <ChakraProvider>
         <Box position="relative" top={5} left={4}>
@@ -30,12 +32,31 @@ const Fancy = () => {
                         duration={1000}
                         easing="easeInOut"
                         trigger={flipTrigger}
-                        flipDirection="horizontal"
+                        flipDirection="diagonalLeft"
                     >
                         <Image src="/next.svg" alt="Next.js logo" boxSize="150px" />
                     </MotionFlip>
                     <Button colorScheme="blue" onClick={() => setFlipTrigger(!flipTrigger)}>
                         Trigger Flip
+                    </Button>
+                </VStack>
+            </Center>
+
+            <Center>
+                <VStack spacing={10}>
+                    <MotionSpiralIn 
+                        duration={500} 
+                        easing="easeInOut"
+                        trigger={zoomFadeTrigger}
+                        initialScale={0.5} // Initial scale
+                        finalScale={1} // Final scale
+                        initialOpacity={0} // Initial opacity
+                        finalOpacity={1} // Final opacity
+                    >
+                    <Image src="/vercel.svg" alt="Next.js logo" boxSize="150px" />
+                    </MotionSpiralIn>
+                    <Button colorScheme="blue" onClick={() => setZoomFadeTrigger(!zoomFadeTrigger)}>
+                    Trigger Spiral In
                     </Button>
                 </VStack>
             </Center>
