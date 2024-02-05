@@ -2,18 +2,47 @@
 
 ## Project Overview
 
-This project is a collection of reusable animations for web design, showcasing the power and flexibility of Framer Motion, a popular animation library for React. It focuses on creating engaging user interfaces with smooth animations and transitions.
+This project is a collection of reusable animation modules, designed to simplify the process of implementing animations in web applications. It leverages Framer Motion, a powerful library for React, to create engaging and interactive UI elements.
 
 ### Key Features
 
-- **Framer Motion**: Demonstrates a variety of animations and transitions, offering a playground to experiment with Framer Motion properties.
-- **Interactivity**: Interactive elements that respond to user actions like hover, click, drag, etc.
-- **Chakra UI**: Utilizes Chakra UI for a clean, modern, and responsive design.
-- **Responsive Design**: Ensures that animations are fluid and consistent across different screen sizes.
+- **Reusable Animation Components**: Includes `MotionRotate`, `MotionScale`, `MotionSlide`, and `MotionFade` components for easy animation implementation.
+- **Versatility**: These components can be applied to various elements including SVGs, enhancing the visual appeal and interactivity of the UI.
+- **Customizable**: Each component is customizable with properties like duration, delay, and easing, allowing for tailored animation effects.
 
-## Getting Started
+## Example: MotionRotate Component
 
-These instructions will help you set up a copy of the project on your local machine for development and testing purposes.
+The `MotionRotate` component is designed to provide a smooth rotation animation. It accepts several props to control the animation:
+
+- `children`: The React nodes to be animated.
+- `duration`: The duration of the animation in milliseconds.
+- `delay`: (Optional) Delay before the animation starts, in milliseconds.
+- `easing`: Defines the pacing of the animation. Various options like `linear`, `easeIn`, `easeOut`, etc., are available.
+- `trigger`: A boolean to control the start of the animation.
+- `initialTurns`: The initial state of rotation in degrees.
+- `finalTurns`: The final state of rotation in degrees.
+
+### Usage
+
+```jsx
+<MotionRotate
+  duration={1000}
+  delay={100}
+  easing="easeInOut"
+  trigger={true}
+  initialTurns={0}
+  finalTurns={360}
+>
+  <YourComponent />
+</MotionRotate>
+```
+This component provides an easy way to add rotation effects to elements in your application. Similarly there are also MotionScale, MotionFade, and MotionSlide conponents
+
+## To get started with this project:
+
+1. Clone the repository.
+1. Install dependencies using npm install.
+1. Run the development server with npm run dev.
 
 ### Prerequisites
 
