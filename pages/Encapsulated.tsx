@@ -1,10 +1,10 @@
 import React, { 
     useState 
 } from 'react';
-import MotionFade from '../components/MotionFade';
-import MotionRotate from '../components/MotionRotate';
-import MotionScale from '../components/MotionScale';
-import MotionSlide from '../components/MotionSlide';
+import MotionFade from '../components/standard/MotionFade';
+import MotionRotate from '../components/standard/MotionRotate';
+import MotionScale from '../components/standard/MotionScale';
+import MotionSlide from '../components/standard/MotionSlide';
 import { 
     Button, 
     VStack, 
