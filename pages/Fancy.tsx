@@ -28,7 +28,7 @@ const Fancy = () => {
             <Button colorScheme="blue">Animations Menu</Button>
           </Link>
         </Box>
-        <VStack spacing={20} mt={20} align="center" justify="center" height="100vh">
+        <VStack spacing={5} mt={5} align="center" justify="center" height="100vh">
 
             <Center>
                 <VStack spacing={10}>
