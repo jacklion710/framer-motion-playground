@@ -1,5 +1,8 @@
 # Framer Motion Playground
 
+## Deployment:
+https://framer-motion-playground-swart.vercel.app
+
 ## Project Overview
 
 This project is a collection of reusable animation modules, designed to simplify the process of implementing animations in web applications. It leverages Framer Motion, a powerful library for React, to create engaging and interactive UI elements.
