@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react';
 
 const Glitch = () => {
+  const [displaceTrigger, setDisplaceTrigger] = useState(false);
   const [glitchTrigger, setGlitchTrigger] = useState(false);
 
   return (
@@ -29,13 +30,13 @@ const Glitch = () => {
                 <MotionDisplace
                     duration={1000}
                     easing="easeInOut"
-                    trigger={glitchTrigger}
+                    trigger={displaceTrigger}
                     intensity={90}
                 >
                     <Image src="/next.svg" alt="Next.js logo" boxSize="150px" />
                 </MotionDisplace>
-                <Button colorScheme="blue" onClick={() => setGlitchTrigger(!glitchTrigger)}>
-                    Trigger Glitch
+                <Button colorScheme="blue" onClick={() => setDisplaceTrigger(!displaceTrigger)}>
+                    Trigger Displace
                 </Button>
             </VStack>
         </Center>
