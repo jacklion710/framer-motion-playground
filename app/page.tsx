@@ -64,7 +64,7 @@ export default function Home() {
             <MotionSlide 
               duration={500} // 0.5 seconds
               trigger={animateSlide} 
-              easing="circleOut"
+              easing="easeIn"
               horizontalSlideInitial={'-100vw'}
               horizontalSlideFinal={0}
               verticalSlideInitial={'-100vh'}
