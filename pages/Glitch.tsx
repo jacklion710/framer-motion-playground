@@ -1,20 +1,19 @@
 import React, { 
     useState 
 } from 'react';
-import MotionFade from '../components/standard/MotionFade';
-import MotionRotate from '../components/standard/MotionRotate';
-import MotionScale from '../components/standard/MotionScale';
-import MotionSlide from '../components/standard/MotionSlide';
+import MotionDisplace from '../components/glitch/MotionDisplace';
 import { 
     VStack, 
     ChakraProvider, 
-    Heading, 
     Link,
     Button,
-    Box
+    Box,
+    Center,
+    Image
 } from '@chakra-ui/react';
 
 const Glitch = () => {
+  const [glitchTrigger, setGlitchTrigger] = useState(false);
 
   return (
     <ChakraProvider>
@@ -25,8 +24,22 @@ const Glitch = () => {
       </Box>
       <VStack spacing={20} mt={20} align="center" justify="center" height="100vh">
 
-       <Heading>This collection is a work in progress.</Heading>
-
+        <Center>
+            <VStack spacing={10}>
+                <MotionDisplace
+                    duration={1000}
+                    easing="easeInOut"
+                    trigger={glitchTrigger}
+                    intensity={90}
+                >
+                    <Image src="/next.svg" alt="Next.js logo" boxSize="150px" />
+                </MotionDisplace>
+                <Button colorScheme="blue" onClick={() => setGlitchTrigger(!glitchTrigger)}>
+                    Trigger Glitch
+                </Button>
+            </VStack>
+        </Center>
+        
       </VStack>
     </ChakraProvider>
   );
