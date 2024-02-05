@@ -11,6 +11,7 @@ import {
     ChakraProvider, 
     Box, 
     Center, 
+    Link
 } from '@chakra-ui/react';
 
 const Encapsulated = () => {
@@ -23,6 +24,11 @@ const Encapsulated = () => {
 
   return (
     <ChakraProvider>
+      <Box position="relative" top={5} left={4}>
+        <Link href="/AnimMenu">
+          <Button colorScheme="blue">Animations Menu</Button>
+        </Link>
+      </Box>
       <VStack spacing={20} mt={20} align="center" justify="center" height="100vh">
         {/* Combined Animations */}
         <Center>

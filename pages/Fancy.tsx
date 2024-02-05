@@ -9,12 +9,20 @@ import {
     VStack, 
     ChakraProvider, 
     Heading, 
+    Link,
+    Button,
+    Box
 } from '@chakra-ui/react';
 
 const Fancy = () => {
 
   return (
     <ChakraProvider>
+      <Box position="relative" top={5} left={4}>
+        <Link href="/AnimMenu">
+          <Button colorScheme="blue">Animations Menu</Button>
+        </Link>
+      </Box>
       <VStack spacing={20} mt={20} align="center" justify="center" height="100vh">
 
        <Heading>This collection is a work in progress.</Heading>
